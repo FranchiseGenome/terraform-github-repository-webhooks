@@ -9,7 +9,7 @@ resource "github_repository_webhook" "default" {
   repository = "${var.github_repositories[count.index]}"
   active     = "${var.active}"
 
-  configuration {
+  configuration = {
     url          = "${var.webhook_url}"
     content_type = "${var.webhook_content_type}"
     secret       = "${var.webhook_secret}"
